@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="flex items-center text-gray-400 text-sm mb-4 md:mb-0"
               >
-                <span>© {currentYear} John Smith. All rights reserved.</span>
+                <span>© {currentYear} siddheshwar more. All rights reserved.</span>
                 {/* <div className="mx-2">•</div>
                 <span className="flex items-center">
                   Made with <Heart size={16} className="text-red-500 mx-1 animate-pulse" /> and lots of
