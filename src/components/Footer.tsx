@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                     <Code size={20} className="text-white" />
                   </div>
                   <span className="text-2xl font-bold">
-                    John<span className="text-blue-400">Smith</span>
+                    siddheshwar<span className="text-blue-400">More</span>
                   </span>
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">
