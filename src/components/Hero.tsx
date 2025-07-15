@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="pt-8 pb-5 min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Glow Effects */}
       <div className="absolute inset-0 bg-light-gradient dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
         <div className="absolute inset-0">
@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
         animate={inView ? "visible" : "hidden"}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="mt-5 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div variants={itemVariants} className="text-left">
             <motion.div className="mb-6">
