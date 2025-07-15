@@ -42,8 +42,8 @@ const Hero: React.FC = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'John_Smith_Resume.pdf';
+    link.href = '/myresume61.pdf';
+    link.download = 'Siddheshwar_More_Resume.pdf';
     link.click();
   };
 
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Background Glow Effects */}
       <div className="absolute inset-0 bg-light-gradient dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => (
@@ -113,12 +113,11 @@ const Hero: React.FC = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Text Content */}
+          {/* Left Content */}
           <motion.div variants={itemVariants} className="text-left">
-            {/* Main Heading */}
             <motion.div className="mb-6">
-              <motion.h1 
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-800 dark:text-white mb-4"
+              <motion.h1
+                className="text-5xl sm:text-3xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-4"
                 initial={{ scale: 0.5 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -129,10 +128,10 @@ const Hero: React.FC = () => {
                   animate={{ backgroundPosition: ['0%', '100%'] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 >
-                  John Smith
+                  Siddheshwar More
                 </motion.span>
               </motion.h1>
-              
+
               <div className="h-20 flex items-center">
                 <motion.p
                   key={currentRole}
@@ -146,12 +145,11 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Description */}
             <motion.p
               variants={itemVariants}
               className="text-lg text-gray-700 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed"
             >
-              Passionate computer science student specializing in full-stack development and AI. 
+              Passionate computer science student specializing in full-stack development and AI.
               I create innovative web applications and explore cutting-edge technologies to solve real-world problems.
             </motion.p>
 
@@ -162,14 +160,14 @@ const Hero: React.FC = () => {
             >
               <motion.button
                 onClick={scrollToProjects}
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 justify-center"
               >
                 <Play size={20} className="group-hover:translate-x-1 transition-transform" />
                 View My Work
               </motion.button>
-              
+
               <motion.button
                 onClick={downloadResume}
                 whileHover={{ scale: 1.05 }}
@@ -182,15 +180,12 @@ const Hero: React.FC = () => {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div
-              variants={itemVariants}
-              className="flex space-x-6"
-            >
+            <motion.div variants={itemVariants} className="flex space-x-6">
               {[
-                { icon: Github, href: "https://github.com", color: "hover:text-gray-900 dark:hover:text-gray-100" },
-                { icon: Linkedin, href: "https://linkedin.com", color: "hover:text-blue-600" },
-                { icon: Mail, href: "mailto:john@example.com", color: "hover:text-red-500" }
-              ].map(({ icon: Icon, href, color }, index) => (
+                { icon: Github, href: "https://github.com/siddhumore18" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/siddheshwar-more-24873b284/" },
+                { icon: Mail, href: "mailto:srmore125125@gmail.com" },
+              ].map(({ icon: Icon, href }, index) => (
                 <motion.a
                   key={index}
                   href={href}
@@ -198,7 +193,7 @@ const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-gray-600 dark:text-gray-400 ${color} transition-all duration-300 shadow-lg hover:shadow-xl`}
+                  className="p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   <Icon size={24} />
                 </motion.a>
@@ -206,22 +201,21 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Profile Image */}
+          {/* Right Profile Circle with Image */}
           <motion.div variants={itemVariants} className="flex justify-center lg:justify-end">
             <div className="relative w-80 h-80">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-2"
-              >
+              
                 <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-                  <div className="w-72 h-72 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl font-bold relative overflow-hidden">
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      JS
-                    </motion.div>
+                  <div className="w-72 h-72 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                   
+                      
+                      <img
+                        src="/me2.jpg" // ✅ Correct if image is in public/
+                        alt="Siddheshwar More"
+                        className="w-full h-full object-cover rounded-full"
+                      />
+
+                    
                     <motion.div
                       className="absolute inset-0 bg-white/20"
                       animate={{ x: ['-100%', '100%'] }}
@@ -229,7 +223,8 @@ const Hero: React.FC = () => {
                     />
                   </div>
                 </div>
-              </motion.div>
+              
+
               <motion.div
                 className="absolute -top-4 -right-4 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center"
                 animate={{ scale: [1, 1.2, 1] }}
@@ -241,7 +236,7 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Down Indicator */}
         <motion.div
           variants={itemVariants}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"

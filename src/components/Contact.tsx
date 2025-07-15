@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+
 import { useInView } from 'react-intersection-observer';
 import { 
   Mail, 
@@ -28,20 +30,39 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  const templateParams = {
+    from_name: formData.name,
+    from_email: formData.email,
+    subject: formData.subject,
+    message: formData.message
+  };
+
+  try {
+    const result = await emailjs.send(
+      'service_b5brq1b',       // ✅ Your Service ID
+      'template_quk3tfq',      // 🔁 Replace with your Template ID
+      templateParams,
+      'TEWYjNbLi3NGXaebZ'        // 🔁 Replace with your Public Key
+    );
+
+    console.log('Email sent successfully:', result.text);
+
     setIsSubmitted(true);
     setFormData({ name: '', email: '', subject: '', message: '', budget: '', timeline: '' });
-    
-    // Reset success message after 5 seconds
+
     setTimeout(() => setIsSubmitted(false), 5000);
-  };
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    alert('Oops! Something went wrong. Please try again later.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -54,61 +75,52 @@ const Contact: React.FC = () => {
     {
       icon: <Mail size={20} />,
       title: 'Email',
-      value: 'john.smith@email.com',
-      link: 'mailto:john.smith@email.com',
+      value: 'srmore125125@gmail.com',
+      link: 'mailto:srmore125125@gmail.com',
       description: 'Send me an email anytime!'
     },
     {
       icon: <Phone size={20} />,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+91 7499422391',
       link: 'tel:+15551234567',
       description: 'Mon-Fri from 9am to 6pm'
     },
     {
       icon: <MapPin size={20} />,
       title: 'Location',
-      value: 'New York, NY',
+      value: 'salgola , Solapur , Maharashtra',
       link: 'https://maps.google.com',
       description: 'Available for remote work'
-    },
-    {
-      icon: <MessageCircle size={20} />,
-      title: 'Response Time',
-      value: '< 24 hours',
-      link: '#',
-      description: 'I typically respond quickly'
     }
+    // ,
+    // {
+    //   icon: <MessageCircle size={20} />,
+    //   title: 'Response Time',
+    //   value: '< 24 hours',
+    //   link: '#',
+    //   description: 'I typically respond quickly'
+    // }
   ];
 
   const socialLinks = [
     {
       icon: <Github size={24} />,
       name: 'GitHub',
-      url: 'https://github.com',
-      color: 'hover:text-gray-900 dark:hover:text-gray-100',
-      followers: '1.2K'
+      url: 'https://github.com/siddhumore18',
+      color: 'hover:text-gray-900 dark:hover:text-gray-100'
     },
     {
       icon: <Linkedin size={24} />,
       name: 'LinkedIn',
-      url: 'https://linkedin.com',
-      color: 'hover:text-blue-600 dark:hover:text-blue-400',
-      followers: '2.5K'
-    },
-    {
-      icon: <Twitter size={24} />,
-      name: 'Twitter',
-      url: 'https://twitter.com',
-      color: 'hover:text-blue-400 dark:hover:text-blue-300',
-      followers: '800'
+      url: 'https://www.linkedin.com/in/siddheshwar-more-24873b284/',
+      color: 'hover:text-blue-600 dark:hover:text-blue-400'
     },
     {
       icon: <Mail size={24} />,
       name: 'Email',
-      url: 'mailto:john.smith@email.com',
-      color: 'hover:text-red-500 dark:hover:text-red-400',
-      followers: 'Direct'
+      url: 'mailto:srmore125125@gmail.com',
+      color: 'hover:text-red-500 dark:hover:text-red-400'
     }
   ];
 
@@ -132,7 +144,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-light-gradient-vertical dark:bg-gray-800">
+    <section id="contact" className="p-10 bg-light-gradient dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -218,7 +230,7 @@ const Contact: React.FC = () => {
                     />
                   </div>
                 </div>
-
+{/* 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -258,7 +270,7 @@ const Contact: React.FC = () => {
                       <option value="3+ months">3+ months</option>
                     </select>
                   </div>
-                </div>
+                </div> */}
                 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -391,7 +403,7 @@ const Contact: React.FC = () => {
             </motion.div>
 
             {/* Availability */}
-            <motion.div
+            {/* <motion.div
               variants={itemVariants}
               className="bg-green-50/80 dark:bg-green-900/20 backdrop-blur-sm rounded-2xl p-8 border border-green-200 dark:border-green-800"
             >
@@ -408,7 +420,7 @@ const Contact: React.FC = () => {
                 <Calendar size={16} />
                 <span>Next availability: Immediately</span>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

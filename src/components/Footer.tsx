@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
     'React & Next.js',
     'Node.js & Python',
     'AI & Machine Learning',
-    'Cloud Solutions'
+    'DSA'
   ];
 
   const scrollToTop = () => {
@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
                 </p>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                    { icon: Mail, href: 'mailto:john.smith@email.com', label: 'Email' }
+                    { icon: Github, href: 'https://github.com/siddhumore18', label: 'GitHub' },
+                    { icon: Linkedin, href: 'https://www.linkedin.com/in/siddheshwar-more-24873b284/', label: 'LinkedIn' },
+                    { icon: Mail, href: 'mailto:srmore125125@gmai.com', label: 'Email' }
                   ].map(({ icon: Icon, href, label }) => (
                     <motion.a
                       key={label}
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
             </div>
             
             {/* Services */}
-            <div>
+            {/* <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
                   ))}
                 </ul>
               </motion.div>
-            </div>
+            </div> */}
             
             {/* Technologies */}
             <div>
@@ -161,11 +161,11 @@ const Footer: React.FC = () => {
                 className="flex items-center text-gray-400 text-sm mb-4 md:mb-0"
               >
                 <span>© {currentYear} John Smith. All rights reserved.</span>
-                <div className="mx-2">•</div>
+                {/* <div className="mx-2">•</div>
                 <span className="flex items-center">
                   Made with <Heart size={16} className="text-red-500 mx-1 animate-pulse" /> and lots of
                   <Coffee size={16} className="text-yellow-500 ml-1" />
-                </span>
+                </span> */}
               </motion.div>
               
               <motion.div

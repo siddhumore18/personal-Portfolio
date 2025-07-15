@@ -64,11 +64,12 @@ function App() {
             <Navbar activeSection={activeSection} />
             <Hero />
             <About />
+             <Skills />
             <Experience />
             <Projects />
-            <Skills />
-            <Services />
-            <Testimonials />
+           
+            {/* <Services /> */}
+            {/* <Testimonials /> */}
             <Contact />
             <Footer />
             <ScrollToTop />

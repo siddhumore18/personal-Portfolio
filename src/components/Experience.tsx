@@ -9,9 +9,9 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Frontend Developer Intern',
-      company: 'TechCorp Solutions',
-      location: 'New York, NY',
+      title: 'Web Developer Intern',
+      company: 'Osis InfoBytes',
+      location: 'Pune, Maharashtra',
       duration: 'Jun 2024 - Aug 2024',
       type: 'Internship',
       description: 'Developed responsive web applications using React and TypeScript. Collaborated with senior developers to implement new features and optimize performance.',
@@ -24,31 +24,27 @@ const Experience: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Web Development Teaching Assistant',
-      company: 'State University',
-      location: 'University Campus',
-      duration: 'Jan 2024 - Present',
-      type: 'Part-time',
-      description: 'Assist students in learning web development fundamentals. Grade assignments and provide feedback on coding projects.',
+      title: 'Technical Specialist In Poineer 2025 (Organised by ISTE)',
+      company: 'ISTE KIT CoEK',
+      location: 'College Campus',
+      duration: 'Jan 2024 - March 2024',
+      
+      description: 'Develop And Deployed Website of Pioneer 2025.',
       achievements: [
-        'Mentored 50+ students in web development',
-        'Created tutorial materials for React basics',
-        'Maintained 95% student satisfaction rating'
+        'Mentored 20+ students in web development',
+        'handled Technocal part of 1000+ Participatas event'
       ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js']
     },
     {
       id: 3,
-      title: 'Freelance Web Developer',
+      title: 'NSS Volunteer',
       company: 'Self-Employed',
-      location: 'Remote',
-      duration: 'Sep 2023 - Present',
-      type: 'Freelance',
-      description: 'Design and develop custom websites for small businesses and startups. Handle full project lifecycle from requirements to deployment.',
+      location: '',
+      duration: 'Sep 2024 - Present',
+      type: '',
+      description: '.',
       achievements: [
-        'Completed 10+ client projects',
-        'Achieved 100% client satisfaction',
-        'Generated $15K+ in revenue'
       ],
       technologies: ['React', 'Next.js', 'Firebase', 'Stripe', 'Vercel']
     }
@@ -83,7 +79,7 @@ const Experience: React.FC = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-white/90 dark:bg-gray-900">
+       <section id="experience" className="p-10 bg-light-gradient-vertical dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -96,7 +92,7 @@ const Experience: React.FC = () => {
             variants={itemVariants}
             className="text-4xl font-bold text-gray-800 dark:text-white mb-4"
           >
-            Work Experience
+            Experience & Learning
           </motion.h2>
           <motion.p
             variants={itemVariants}

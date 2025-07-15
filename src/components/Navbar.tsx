@@ -15,11 +15,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'services', label: 'Services' },
-    { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -64,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 <Code size={20} className="text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900 dark:text-white">
-                John<span className="text-blue-600 dark:text-blue-400">Smith</span>
+                S<span className="text-blue-600 dark:text-blue-400"> M</span>
               </span>
             </div>
           </motion.div>

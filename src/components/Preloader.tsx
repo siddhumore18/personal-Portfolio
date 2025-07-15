@@ -31,7 +31,7 @@ const Preloader: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="text-2xl font-bold text-white mb-2"
         >
-          John Smith
+          Siddheshwar More
         </motion.h2>
         
         <motion.div
